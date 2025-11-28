@@ -1,0 +1,38 @@
+﻿<Window x:Class="Michis_Veterinaria.Admin_Panel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Michis_Veterinaria"
+        mc:Ignorable="d"
+        Title="Admin_Panel" Height="450" Width="800">
+    
+    <Window.Background>
+        <SolidColorBrush Color="#bda2cd"/>
+    </Window.Background>
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--esto es el lateral-->
+        <StackPanel Background="#ae4392" Margin="20" VerticalAlignment="Stretch">
+            <TextBlock Text="ADMIN" FontSize="32" FontWeight="Bold" Foreground="White" Margin="0" TextAlignment="Center"/>
+
+            <Button Content="Vista" Height="45" Margin="0,5" Click="BtnDashboard_Click" Background="#61378d" Foreground="White"/>
+            <Button Content="Gestionar Citas" Height="45" Margin="0,5" Click="BtnCitas_Click" Background="#61378d" Foreground="White"/>
+            <Button Content="Clientes y Mascotas" Height="45" Margin="0,5" Click="BtnClientes_Click" Background="#61378d" Foreground="White"/>
+            <Button Content="Administrar Tienda" Height="45" Margin="0,5" Click="BtnTienda_Click" Background="#61378d" Foreground="White"/>
+            <Button Content="Administrar Usuarios" Height="45" Margin="0,5" Click="BtnUsuarios_Click" Background="#61378d" Foreground="White"/>
+            <Button Content="Cerrar Sesión" Height="45" Margin="0" Click="BtnCerrarSesion_Click" Background="#ff6b6b" Foreground="White"/>
+        </StackPanel>
+        
+        <!--bienvenidss al panel de admin-->
+        <Border Grid.Column="1" Background="White" CornerRadius="20" Padding="20" x:Name="ContentArea">
+            <TextBlock Text="Bienvenido al Panel de Administrador de Michis 🐾" FontSize="28" FontWeight="Bold" Foreground="#61378d" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Width="508"/>
+        </Border>
+
+    </Grid>
+</Window>

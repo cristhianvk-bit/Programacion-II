@@ -1,0 +1,36 @@
+﻿<Window x:Class="Michis_Veterinaria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Michis_Veterinaria"
+        mc:Ignorable="d"
+        Title="Michis" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Background>
+        <SolidColorBrush Color="#bda2cd"/>
+    </Window.Background>
+
+        <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Michis" FontFamily="#Nunito" FontSize="20" Margin="337,253,337,153" TextAlignment="Center"/>
+        <Button Margin="276,326,438,74" Click="Btn_Admin" Background="#ae4392" BorderBrush="#61378d" BorderThickness="2">
+            <TextBlock Text="Iniciar&#x000A;administrador"
+               TextAlignment="Center"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" Foreground="white" FontWeight="Bold"/>
+        </Button>
+
+        <Button Margin="424,326,290,74" Click="Btn_Usuario"  Background="#ae4392" BorderBrush="#61378d" BorderThickness="2">
+            <TextBlock Text="Iniciar como &#x000A;Usuario" 
+                       TextAlignment="Center" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" Foreground="white" FontWeight="Bold"/>
+        </Button>
+    </Grid>
+</Window>
