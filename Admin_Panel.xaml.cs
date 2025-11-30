@@ -28,11 +28,14 @@ namespace Michis_Veterinaria
         {
             Vista ventana = new Vista();
             ventana.Show();
+            this.Hide();
         }
 
         private void BtnCitas_Click(object sender, RoutedEventArgs e)
         {
-
+            CitaPanel ventana = new CitaPanel();
+            ventana.Show();
+            this.Hide();
         }
 
         private void BtnClientes_Click(object sender, RoutedEventArgs e)

@@ -19,14 +19,13 @@
         
         <!--esto es el lateral-->
         <StackPanel Background="#ae4392" Margin="20" VerticalAlignment="Stretch">
-            <TextBlock Text="ADMIN" FontSize="32" FontWeight="Bold" Foreground="White" Margin="0" TextAlignment="Center"/>
+            <TextBlock Text="ADMIN" FontSize="32" FontWeight="Bold" Foreground="White" Margin="25" TextAlignment="Center"/>
 
             <Button Content="Vista" Height="45" Margin="0,5" Click="BtnDashboard_Click" Background="#61378d" Foreground="White"/>
             <Button Content="Gestionar Citas" Height="45" Margin="0,5" Click="BtnCitas_Click" Background="#61378d" Foreground="White"/>
             <Button Content="Clientes y Mascotas" Height="45" Margin="0,5" Click="BtnClientes_Click" Background="#61378d" Foreground="White"/>
-            <Button Content="Administrar Tienda" Height="45" Margin="0,5" Click="BtnTienda_Click" Background="#61378d" Foreground="White"/>
             <Button Content="Administrar Usuarios" Height="45" Margin="0,5" Click="BtnUsuarios_Click" Background="#61378d" Foreground="White"/>
-            <Button Content="Cerrar Sesión" Height="45" Margin="0" Click="BtnCerrarSesion_Click" Background="#ff6b6b" Foreground="White"/>
+            <Button Content="Cerrar Sesión" Height="45" Click="BtnCerrarSesion_Click" Background="#ff6b6b" Foreground="White"/>
         </StackPanel>
         
         <!--bienvenidss al panel de admin-->

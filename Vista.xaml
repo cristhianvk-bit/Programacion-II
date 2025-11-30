@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Michis_Veterinaria"
         mc:Ignorable="d"
-        Title="Vista" Height="450" Width="800">
+        Title="Vista" Height="474" Width="815">
     <Window.Background>
         <SolidColorBrush Color="#bda2cd"/>
     </Window.Background>
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>   <!-- Título -->
-            <RowDefinition Height="*"/>      <!-- Dashboard -->
+            <RowDefinition Height="Auto"/>
+            <!-- Título -->
+            <RowDefinition Height="*"/>
+            <!-- Dashboard -->
         </Grid.RowDefinitions>
 
         <!-- Título -->
