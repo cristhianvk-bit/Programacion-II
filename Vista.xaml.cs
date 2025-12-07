@@ -22,17 +22,21 @@ namespace Michis_Veterinaria
         public Vista()
         {
             InitializeComponent();
-            CargarDashboard();
+            VistaGeneral();
         }
-        private void CargarDashboard()
+        private void VistaGeneral()
         {
-            // Por ahora son datos falsos
-            // Luego los conectamos a la base de datos o archivos JSON
+            ListaVete.Text = Estadisticas.Veterinarios.Count.ToString();
+            Clientes.Text = Estadisticas.Clientes.Count.ToString();
+            Mascotas.Text = Estadisticas.Mascotas.Count.ToString();
+            Citas.Text = Estadisticas.TotalCitas.ToString();
+        }
 
-            txtCitasHoy.Text = "5";
-            txtProximas.Text = "12";
-            txtClientes.Text = "28";
-            txtMascotas.Text = "43";
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Admin_Panel principal = new Admin_Panel();  
+            principal.Show();
+            this.Close();
         }
     }
 }

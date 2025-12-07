@@ -25,7 +25,7 @@
                    Foreground="#61378d"
                    HorizontalAlignment="Left"
                    Margin="10"/>
-
+        <Button Margin="638,10,0,10" Content="Volver" Foreground="White" Background="#bda2cd" BorderBrush="#bda2cd" FontWeight="Bold" FontSize="20" Click="Button_Click"/>
         <!-- Contenedor de cards -->
         <UniformGrid Grid.Row="1" Columns="2" Rows="2" Margin="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
 
@@ -37,8 +37,8 @@
                     BorderBrush="#61378d"
                     BorderThickness="3">
                 <StackPanel>
-                    <TextBlock Text="📅 Citas Hoy" FontSize="18" Foreground="White" FontWeight="Bold"/>
-                    <TextBlock x:Name="txtCitasHoy" Text="0" FontSize="42" FontWeight="Bold"
+                    <TextBlock Text="Lista Veterinarios" FontSize="18" Foreground="White" FontWeight="Bold"/>
+                    <TextBlock x:Name="ListaVete" Text="0" FontSize="42" FontWeight="Bold"
                                Margin="0 10 0 0" Foreground="White"/>
                 </StackPanel>
             </Border>
@@ -51,8 +51,8 @@
                     BorderBrush="#61378d"
                     BorderThickness="3">
                 <StackPanel>
-                    <TextBlock Text="📆 Próximas 7 días" FontSize="18" Foreground="White" FontWeight="Bold"/>
-                    <TextBlock x:Name="txtProximas" Text="0" FontSize="42" FontWeight="Bold"
+                    <TextBlock Text="Citas Totales" FontSize="18" Foreground="White" FontWeight="Bold"/>
+                    <TextBlock x:Name="Citas" Text="0" FontSize="42" FontWeight="Bold"
                                Margin="0 10 0 0" Foreground="White"/>
                 </StackPanel>
             </Border>
@@ -66,7 +66,7 @@
                     BorderThickness="3">
                 <StackPanel>
                     <TextBlock Text="👥 Clientes" FontSize="18" Foreground="White" FontWeight="Bold"/>
-                    <TextBlock x:Name="txtClientes" Text="0" FontSize="42" FontWeight="Bold"
+                    <TextBlock x:Name="Clientes" Text="0" FontSize="42" FontWeight="Bold"
                                Margin="0 10 0 0" Foreground="White"/>
                 </StackPanel>
             </Border>
@@ -80,7 +80,7 @@
                     BorderThickness="3">
                 <StackPanel>
                     <TextBlock Text="🐶 Mascotas" FontSize="18" Foreground="White" FontWeight="Bold"/>
-                    <TextBlock x:Name="txtMascotas" Text="0" FontSize="42" FontWeight="Bold"
+                    <TextBlock x:Name="Mascotas" Text="0" FontSize="42" FontWeight="Bold"
                                Margin="0 10 0 0" Foreground="White"/>
                 </StackPanel>
             </Border>
