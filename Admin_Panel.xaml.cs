@@ -23,39 +23,29 @@ namespace Michis_Veterinaria
         {
             InitializeComponent();
         }
-
-        private void BtnDashboard_Click(object sender, RoutedEventArgs e)
+        private void BtnVista_Click(object sender, RoutedEventArgs e)
         {
             Vista ventana = new Vista();
             ventana.Show();
             this.Hide();
         }
-
-        private void BtnCitas_Click(object sender, RoutedEventArgs e)
+        private void BtnGestion_Click(object sender, RoutedEventArgs e)
         {
-            CitaPanel ventana = new CitaPanel();
+            GestionaVet ventana = new GestionaVet();
             ventana.Show();
             this.Hide();
         }
-
         private void BtnClientes_Click(object sender, RoutedEventArgs e)
         {
-
+            ClienteMascota ventana = new ClienteMascota();
+            ventana.Show();
+            this.Hide();
         }
-
-        private void BtnTienda_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnUsuarios_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow inicial = new MainWindow();
+            inicial.Show();
+            this.Close();
         }
     }
 }

@@ -5,33 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Michis_Veterinaria"
         mc:Ignorable="d"
-        Title="Admin_Panel" Height="450" Width="800">
-    
+        Title="Admin_Panel" Height="470" Width="800">
     <Window.Background>
-        <SolidColorBrush Color="#bda2cd"/>
+        <SolidColorBrush Color="#e9dff2"/>
     </Window.Background>
 
-    <Grid Margin="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="230"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <!--esto es el lateral-->
-        <StackPanel Background="#ae4392" Margin="20" VerticalAlignment="Stretch">
-            <TextBlock Text="ADMIN" FontSize="32" FontWeight="Bold" Foreground="White" Margin="25" TextAlignment="Center"/>
+    <Grid>
 
-            <Button Content="Vista" Height="45" Margin="0,5" Click="BtnDashboard_Click" Background="#61378d" Foreground="White"/>
-            <Button Content="Gestionar Citas" Height="45" Margin="0,5" Click="BtnCitas_Click" Background="#61378d" Foreground="White"/>
-            <Button Content="Clientes y Mascotas" Height="45" Margin="0,5" Click="BtnClientes_Click" Background="#61378d" Foreground="White"/>
-            <Button Content="Administrar Usuarios" Height="45" Margin="0,5" Click="BtnUsuarios_Click" Background="#61378d" Foreground="White"/>
-            <Button Content="Cerrar Sesión" Height="45" Click="BtnCerrarSesion_Click" Background="#ff6b6b" Foreground="White"/>
-        </StackPanel>
-        
-        <!--bienvenidss al panel de admin-->
-        <Border Grid.Column="1" Background="White" CornerRadius="20" Padding="20" x:Name="ContentArea">
-            <TextBlock Text="Bienvenido al Panel de Administrador de Michis 🐾" FontSize="28" FontWeight="Bold" Foreground="#61378d" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Width="508"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- BARRA SUPERIOR -->
+        <Border Background="#ae4392" Padding="15" Grid.Row="0">
+            <DockPanel>
+
+                <TextBlock Text=" Panel Admin"
+                           Foreground="White"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           DockPanel.Dock="Left"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+                    <Button Content="Vista General"
+                            Click="BtnVista_Click"
+                            Background="#6d3aa5"
+                            Foreground="White"
+                            Padding="12,5"
+                            BorderThickness="0"/>
+
+                    <Button Content="Veterinarios"
+                            Click="BtnGestion_Click"
+                            Background="#6d3aa5"
+                            Foreground="White"
+                            Padding="12,5"
+                            BorderThickness="0"/>
+
+                    <Button Content="Clientes y Mascotas"
+                            Click="BtnClientes_Click"
+                            Background="#6d3aa5"
+                            Foreground="White"
+                            Padding="12,5"
+                            BorderThickness="0"/>
+
+                    <Button Content="Cerrar Sesión"
+                            Click="BtnCerrarSesion_Click"
+                            Background="#ff6b6b"
+                            Foreground="White"
+                            Padding="12,5"
+                            BorderThickness="0"/>
+                </StackPanel>
+
+            </DockPanel>
         </Border>
 
+        <!-- CUERPO PRINCIPAL -->
+        <Grid Grid.Row="1" Margin="20">
+
+            <Border Background="White"
+                    CornerRadius="20"
+                    Padding="30">
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <TextBlock Text="Bienvenido al Panel de Administrador "
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Foreground="#61378d"
+                               TextAlignment="Center"
+                               Margin="0 0 0 20"/>
+
+                    <TextBlock Text="Selecciona una opcion en la parte superior"
+                               FontSize="16"
+                               Foreground="#7a5aa8"
+                               TextAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
     </Grid>
+
 </Window>
