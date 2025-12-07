@@ -1,0 +1,214 @@
+﻿<Window x:Class="Michis_Veterinaria.ClienteMascota"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Clientes y Mascotas"
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- FONDO GENERAL -->
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#cdb4db" Offset="0"/>
+            <GradientStop Color="#bde0fe" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="20">
+
+        <!-- TITULO -->
+        <TextBlock Text="Gestión de Clientes y Mascotas"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Foreground="#4b2e83"
+                   HorizontalAlignment="Left"
+                   Margin="0 0 0 10"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Margin="752,12,0,0" VerticalAlignment="Top" Height="30" Width="90" Background="#bde0fe" BorderBrush="#bde0fe" FontWeight="Bold" FontSize="20" Click="Button_Click"/>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <Border Grid.Row="1"
+                Margin="0 60 0 0"
+                CornerRadius="20"
+                Background="White"
+                Padding="20"
+                BorderBrush="#4b2e83"
+                BorderThickness="3">
+
+            <!-- PESTAÑAS -->
+            <TabControl x:Name="Tabs"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="#4b2e83">
+
+                <!-- ===============================
+                     CLIENTES
+                =============================== -->
+                <TabItem Header="Clientes">
+
+                    <Grid Margin="10">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- TABLA CLIENTES -->
+                        <DataGrid x:Name="dgClientes"
+                                  Grid.Row="1"
+                                  AutoGenerateColumns="False"
+                                  Background="White"
+                                  BorderBrush="#4b2e83"
+                                  BorderThickness="1"
+                                  AlternatingRowBackground="#f3d9fa"
+                                  RowHeight="38">
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Width="60" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Nombre" Width="150" Binding="{Binding Nombre}"/>
+                                <DataGridTextColumn Header="Teléfono" Width="130" Binding="{Binding Telefono}"/>
+                                <DataGridTextColumn Header="Correo" Width="180" Binding="{Binding Correo}"/>
+
+                                <!-- BOTONES -->
+                                <DataGridTemplateColumn Header="Acciones" Width="160">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Button Content="Editar"
+                                                        Width="60" Margin="5"
+                                                        Background="#9d4edd"
+                                                        Foreground="White"
+                                                        BorderBrush="#4b2e83"  Click="EditarCliente_Click"/>
+
+                                                <Button Content="X"
+                                                        Width="40" Margin="5"
+                                                        Background="#e63946"
+                                                        Foreground="White"
+                                                        BorderBrush="#4b2e83" Click="EliminarCliente"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <!-- BOTONES CLIENTES -->
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+
+                            <Button Content="Nuevo Cliente"
+                                    Width="150" Height="35" Margin="5"
+                                    Background="#9d4edd"
+                                    Foreground="White"
+                                    BorderBrush="#4b2e83" Click="Boton_Mascota"
+                                    />
+
+                            <Button Content="Guardar"
+                                    Width="120" Height="35" Margin="5"
+                                    Background="#4b2e83"
+                                    Foreground="White"
+                                    BorderBrush="#240046" Click="Boton_Guardar"
+                                    />
+
+                            <Button Content="Cargar"
+                                    Width="120" Height="35" Margin="5"
+                                    Background="#4b2e83"
+                                    Foreground="White"
+                                    BorderBrush="#240046" Click="Boton_Cargar"
+                                    />
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </TabItem>
+
+                <!-- ===============================
+                     MASCOTAS
+                =============================== -->
+                <TabItem Header="Mascotas">
+
+                    <Grid Margin="10">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- TABLA MASCOTAS -->
+                        <DataGrid x:Name="dgMascotas"
+                                  Grid.Row="1"
+                                  AutoGenerateColumns="False"
+                                  Background="White"
+                                  BorderBrush="#4b2e83"
+                                  BorderThickness="1"
+                                  AlternatingRowBackground="#f3d9fa"
+                                  RowHeight="38">
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Width="60" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Nombre" Width="150" Binding="{Binding Nombre}"/>
+                                <DataGridTextColumn Header="Raza" Width="130" Binding="{Binding Raza}"/>
+
+                                <!-- BOTONES -->
+                                <DataGridTemplateColumn Header="Acciones" Width="160">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Button Content="Editar"
+                                                        Width="60" Margin="5"
+                                                        Background="#9d4edd"
+                                                        Foreground="White"
+                                                        BorderBrush="#4b2e83" Click="EditarCliente_Click"/>
+
+                                                <Button Content="X"
+                                                        Width="40" Margin="5"
+                                                        Background="#e63946"
+                                                        Foreground="White"
+                                                        BorderBrush="#4b2e83" Click="EliminarCliente"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <!-- BOTONES MASCOTAS -->
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+
+                            <Button Content="Nueva Mascota"
+                                    Width="150" Height="35" Margin="5"
+                                    Background="#9d4edd"
+                                    Foreground="White"
+                                    BorderBrush="#4b2e83" Click="Boton_Mascota"
+                                    />
+
+                            <Button Content="Guardar"
+                                    Width="120" Height="35" Margin="5"
+                                    Background="#4b2e83"
+                                    Foreground="White"
+                                    BorderBrush="#240046"
+                                    />
+
+                            <Button Content="Cargar"
+                                    Width="120" Height="35" Margin="5"
+                                    Background="#4b2e83"
+                                    Foreground="White"
+                                    BorderBrush="#240046"
+                                    />
+
+                        </StackPanel>
+
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+
+        </Border>
+        
+
+    </Grid>
+
+</Window>
