@@ -1,0 +1,123 @@
+﻿<Window x:Class="Michis_Veterinaria.GestionaVet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Michis_Veterinaria"
+        mc:Ignorable="d"
+        Title="GestionaVet" Height="450" Width="800">
+    <Grid Background="#f0f8ff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- TÍTULO -->
+        <Border Background="#4b2e83" Padding="15" Margin="10">
+            <TextBlock Text="GESTIÓN DE VETERINARIOS" 
+                      Foreground="White"
+                      FontSize="24"
+                      FontWeight="Bold"
+                      HorizontalAlignment="Center"/>
+        </Border>
+        <Button Content="Volver" Margin="725,24,10,24" Foreground="White" Background="#4b2e83" BorderBrush="#4b2e83" FontWeight="Bold" FontSize="15" Click="Button_Click"/>
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20 10">
+            <TextBlock Text="Buscar:" 
+                      FontWeight="Bold"
+                      Margin="0 0 10 0"
+                      VerticalAlignment="Center"/>
+            <TextBox x:Name="txtBuscar" 
+                    Width="200" Height="30"
+                    Padding="5"
+                    TextChanged="txtBuscar_TextChanged"/>
+        </StackPanel>
+
+        <!-- BOTONES PRINCIPALES -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 10">
+            <Button Content="Nuevo" 
+                    Width="100" Height="35"
+                    Margin="5"
+                    Background= "Orange"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Click="BtnNuevo_Click"/>
+
+            <Button Content="Guardar" 
+                    Width="100" Height="35"
+                    Margin="5"
+                    Background="BlueViolet"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Click="BtnGuardar_Click"/>
+
+            <Button Content="Cargar" 
+                    Width="100" Height="35"
+                    Margin="5"
+                    Background="DeepPink"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Click="BtnCargar_Click"/>
+        </StackPanel>
+
+        <!-- DATA GRID -->
+        <DataGrid x:Name="dgVeterinarios"
+                 Grid.Row="2"
+                 Margin="20 5 20 10"
+                 AutoGenerateColumns="False"
+                 Background="White"
+                 BorderBrush="#4b2e83"
+                 BorderThickness="1"
+                 AlternatingRowBackground="#f8f9fa"
+                 RowHeight="35"
+                 SelectionMode="Single"
+                 CanUserAddRows="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="60" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre" Width="200" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Especialidad" Width="110" Binding="{Binding Especialidad}"/>
+                <DataGridTextColumn Header="Teléfono" Width="120" Binding="{Binding Telefono}"/>
+                <DataGridTextColumn Header="Correo" Width="138" Binding="{Binding Correo}"/>
+
+                <!-- COLUMNA DE ACCIONES -->
+                <DataGridTemplateColumn Header="Acciones" Width="130">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Editar" Width="60"
+                                        Margin="5 0"
+                                        Background="#ffc107"
+                                        Foreground="White"
+                                        Click="BtnEditar_Click"/>
+
+                                <Button Content="Eliminar"
+                                        Width="60"
+                                        Margin="5 0"
+                                        Background="#dc3545"
+                                        Foreground="White"
+                                        Click="BtnEliminar_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- PIE -->
+        <Border Grid.Row="3" 
+                Background="#e9ecef" 
+                Padding="10">
+            <TextBlock Text="Total de veterinarios: 0"
+                      x:Name="txtContador"
+                      HorizontalAlignment="Center"
+                      FontWeight="Bold"/>
+        </Border>
+    </Grid>
+</Window>
